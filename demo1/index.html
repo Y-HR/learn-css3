@@ -9,21 +9,25 @@
 
     <span class="title">前端学院</span>
 	<div id="bar" class="barStrech"></div>
-	<div class="switch" onclick="barStrech()">切换样式</div>
+	<div class="switch">切换样式</div>
 	
 	<script>
-		function barStrech(){
-			var bar = document.getElementById('bar');
-			var title = document.getElementsByClassName('title')[0];
-			// bar.className = "barStrech";
-			bar.style.width = "130px";
-			bar.style.height =" 10px";
-			title.style.color = "rgb(47, 91, 224)";
-			var scale = setTimeout(function(){
+		var bar = document.getElementById('bar');
+		var title = document.getElementsByClassName('title')[0];
+		var btn = document.getElementsByClassName('switch')[0];
+		var count = 0;
+		btn.onclick=function(){
+			count++;
+			if(count%2!=0){
+				bar.style.width = "130px";
+				bar.style.height =" 10px";
+				title.style.color = "rgb(47, 91, 224)";
+			}else{
 				bar.style.width = "0px";
 				title.style.color = "black";
-			}, 1000);
+			}
 		}
+		
 	</script>
 
 </body>
